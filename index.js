@@ -4,7 +4,6 @@ const aws = require('aws-sdk'),
     Promise = require('bluebird'),
     request = require('request'),
     rp = require('request-promise'),
-    config = require('./env.json'),
     bunyan = require('bunyan'),
     ccoConfig = require('./configLoader');
 
