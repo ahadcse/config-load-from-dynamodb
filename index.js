@@ -23,7 +23,12 @@ const log = bunyan.createLogger({
 
 exports.setResponse = function (b, code) {
     return {
-        headers: {"Content-Type": "application/json"},
+        headers: {
+            "Content-type": "application/json",
+            "Access-Control-Allow-Headers": "Content-Type,Authorization,Api-Key",
+            "Access-Control-Allow-Methods": "*",
+            "Access-Control-Allow-Origin": "*"
+        },
         statusCode: code,
         body: JSON.stringify(b)
     };
