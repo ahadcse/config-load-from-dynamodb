@@ -39,7 +39,7 @@ exports.handle = (ev, ctx, cb) => {
     return ccoConfig(ev)
         .then(d => {
             log.debug({d: d}, '---- back to main method');
-            cb(null, d);
+            cb(null, self.setResponse(d, 200));
         })
         .catch(e => {
             log.error({error: e.stack}, '----- error');
